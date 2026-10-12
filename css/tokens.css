@@ -1,0 +1,49 @@
+/* ===================================================
+   TOKENS - Constructora Santival
+   =================================================== */
+
+:root {
+  /* --- Colores --- */
+  --azul-santival: #12395F;   /* provisional: confirmar con el logo */
+  --azul-obra:     #0A2136;
+  --hormigon:      #E7E5E0;
+  --blanco:        #FFFFFF;
+  --ambar:         #C98A2B;
+  --acero:         #5D6B78;
+  --texto:         #1A1F24;
+  --linea:         #D8D5CE;
+
+  /* --- Tipografías --- */
+  --fuente-titulo: "Archivo", system-ui, sans-serif;
+  --fuente-texto:  "Barlow", system-ui, sans-serif;
+
+  /* --- Tamaños de texto --- */
+  --fs-display: 48px;
+  --fs-h1:      32px;
+  --fs-h2:      24px;
+  --fs-h3:      18px;
+  --fs-body:    16px;
+  --fs-small:   13px;
+
+  /* --- Espaciado --- */
+  --espacio-1:  4px;
+  --espacio-2:  8px;
+  --espacio-3: 12px;
+  --espacio-4: 16px;
+  --espacio-5: 24px;
+  --espacio-6: 32px;
+  --espacio-7: 48px;
+  --espacio-8: 64px;
+  --espacio-9: 96px;
+
+  /* --- Medidas --- */
+  --radio:        4px;
+  --ancho-max:  1200px;
+  --ancho-texto: 65ch;
+
+  /* --- Efectos --- */
+  --sombra:     0 2px 8px rgba(10, 33, 54, 0.10);
+  --transicion: 180ms ease;
+
+
+}

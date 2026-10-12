@@ -1,11 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Santival Construcciones</title>
+
+    <!-- Fuentes: Archivo (titulares) y Barlow (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Barlow:wght@400;600&display=swap">
+
+    <!-- Estilos: primero los tokens, después el resto -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="contenedor header__inner">
+
+            <!-- Reemplazar por <img src="img/logo.svg"> cuando llegue el logo vectorial -->
+            <a href="index.html" class="header__logo">Santival Construcciones</a>
+
+            <button class="header__toggle" type="button"
+                    aria-expanded="false" aria-controls="menu-principal">
+                <span class="header__toggle-barra"></span>
+                <span class="visualmente-oculto">Abrir menú</span>
+            </button>
+
+            <nav class="header__nav" id="menu-principal" aria-label="Principal">
+                <ul class="header__lista">
+                    <li><a href="#obras">Obras</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <!-- TODO: teléfono real del cliente -->
+                <a href="tel:+56933861293" class="header__telefono">+56 9 3386 1293</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <!-- Semana 3: hero, obras y servicios -->
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <!-- TODO: reemplazar los datos entre [corchetes] con los del brief -->
+    <footer class="footer">
+        <div class="contenedor footer__grid">
+
+            <div class="footer__col">
+                <p class="footer__marca">Santival</p>
+                <p>Santival Construcciones</p>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Contacto</h2>
+                <ul class="footer__lista">
+                    <li><a href="tel:+56933861293">+56 9 3386 1293</a></li>
+                    <li><a href="mailto:dvalenzuela.santival@gmail.com">dvalenzuela.santival@gmail.com</a></li>
+                    <li>Santiago, Chile</li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Dónde trabajamos</h2>
+                <p>Santiago, Chile</p>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Síguenos</h2>
+                <ul class="footer__lista">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="contenedor footer__legal">
+            <p>© 2026 [Razón social]. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

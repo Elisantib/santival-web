@@ -297,7 +297,7 @@ a {
 
 /* ---------------------------------------------------- */
 /* Ocultar contenedor inyectado por Netlify */
-.nl-badge-frame {
+#nl-badge-frame {
   display: none !important;
 
 }

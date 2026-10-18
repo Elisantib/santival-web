@@ -13,6 +13,17 @@
   box-sizing: border-box;
 }
 
+/* Al saltar a #obras o #servicios, que el header fijo no tape el título */
+html {
+  scroll-padding-top: 80px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
   font-family: var(--fuente-texto);
@@ -58,6 +69,38 @@ a {
   white-space: nowrap;
 }
 
+/* Etiqueta pequeña sobre los títulos de sección */
+.etiqueta {
+  margin: 0 0 var(--espacio-2);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--azul-santival);
+}
+
+.etiqueta--clara {
+  color: var(--hormigon);
+}
+
+/* Botón principal. Texto oscuro sobre ámbar: el blanco no pasa contraste. */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding-inline: var(--espacio-5);
+  border-radius: var(--radio);
+  background: var(--ambar);
+  color: var(--texto);
+  font-weight: 600;
+  text-decoration: none;
+  transition: filter var(--transicion);
+}
+
+.boton:hover {
+  filter: brightness(1.1);
+}
+
 
 /* ---------- Header ---------- */
 
@@ -79,7 +122,8 @@ a {
 .header__logo {
   font-family: var(--fuente-titulo);
   font-weight: 800;
-  font-size: var(--fs-h2);
+  font-size: var(--fs-h3);
+  white-space: nowrap;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   text-decoration: none;
@@ -184,6 +228,217 @@ a {
 }
 
 
+/* Variante de la home: el header flota transparente sobre la foto del hero
+   y se vuelve sólido al hacer scroll (main.js le agrega .is-solid) */
+.header--sobre-hero {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: transparent;
+  transition: background var(--transicion), box-shadow var(--transicion);
+}
+
+.header--sobre-hero.is-solid {
+  background: var(--azul-santival);
+  box-shadow: var(--sombra);
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: 88vh;
+  min-height: 88svh;
+  /* Abajo deja espacio para las tarjetas que se montan sobre el borde */
+  padding-block: 120px calc(var(--espacio-8) + var(--espacio-7));
+  color: var(--blanco);
+}
+
+.hero__foto {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Capa azul oscura para que el texto blanco se lea sobre cualquier foto */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 33, 54, 0.6) 0%,
+    rgba(10, 33, 54, 0.45) 40%,
+    rgba(10, 33, 54, 0.75) 100%
+  );
+}
+
+.hero__contenido {
+  width: 100%;
+}
+
+.hero__titulo {
+  max-width: 20ch;
+  margin: 0 0 var(--espacio-4);
+  font-size: clamp(30px, 7vw, var(--fs-display));
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hero__bajada {
+  max-width: 52ch;
+  margin: 0 0 var(--espacio-5);
+  font-size: var(--fs-h3);
+}
+
+
+/* ---------- Datos (tarjetas montadas sobre el hero) ---------- */
+
+.datos {
+  position: relative;
+  display: grid;
+  gap: var(--espacio-3);
+  margin: calc(-1 * var(--espacio-8)) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.datos__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--espacio-4);
+  padding: var(--espacio-4) var(--espacio-5);
+  background: var(--blanco);
+  border-top: 3px solid var(--azul-santival);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.datos__numero {
+  flex: 0 0 auto;
+  min-width: 2ch;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: var(--fs-h1);
+  line-height: 1;
+  color: var(--azul-santival);
+}
+
+.datos__texto {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+/* ---------- Secciones ---------- */
+
+.seccion {
+  padding-block: var(--espacio-8);
+}
+
+.seccion--hormigon {
+  background: var(--hormigon);
+}
+
+.seccion__titulo {
+  margin: 0 0 var(--espacio-6);
+  font-size: var(--fs-h1);
+}
+
+
+/* ---------- Obras ---------- */
+
+.obras {
+  display: grid;
+  gap: var(--espacio-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.obra {
+  overflow: hidden;
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+}
+
+.obra__foto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.obra__info {
+  padding: var(--espacio-4);
+}
+
+.obra__tipo {
+  margin: 0 0 var(--espacio-1);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--azul-santival);
+}
+
+.obra__nombre {
+  margin: 0 0 var(--espacio-2);
+  font-size: var(--fs-h3);
+}
+
+.obra__meta {
+  margin: 0;
+  font-size: 15px;
+  color: var(--acero);
+}
+
+
+/* ---------- Servicios ---------- */
+
+.servicios {
+  display: grid;
+  gap: var(--espacio-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.servicio {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: var(--espacio-4);
+  align-items: start;
+}
+
+.servicio__foto {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: var(--radio);
+}
+
+.servicio__nombre {
+  margin: 0 0 var(--espacio-1);
+  font-size: var(--fs-h3);
+}
+
+.servicio p {
+  margin: 0;
+}
+
+
 /* ---------- Footer ---------- */
 
 .footer {
@@ -248,9 +503,10 @@ a {
 }
 
 
-/* ---------- Tablet: footer en 2 columnas ---------- */
+/* ---------- Tablet: obras y footer en 2 columnas ---------- */
 
 @media (min-width: 600px) {
+  .obras,
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -267,6 +523,10 @@ a {
 
   .header__inner {
     min-height: 80px;
+  }
+
+  .header__logo {
+    font-size: var(--fs-h2);
   }
 
   /* Desaparece la hamburguesa y el menú queda siempre visible en línea */
@@ -288,6 +548,40 @@ a {
     display: flex;
     gap: var(--espacio-5);
     margin: 0;
+  }
+
+  .datos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-5);
+  }
+
+  .datos__item {
+    flex-direction: column;
+    gap: var(--espacio-2);
+    padding: var(--espacio-5);
+  }
+
+  .seccion {
+    padding-block: var(--espacio-9);
+  }
+
+  .obras {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .servicios {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacio-7) var(--espacio-6);
+  }
+
+  .servicio {
+    grid-template-columns: 120px 1fr;
+    gap: var(--espacio-5);
+  }
+
+  .servicio__foto {
+    width: 120px;
+    height: 120px;
   }
 
   .footer__grid {

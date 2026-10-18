@@ -296,11 +296,12 @@ a {
 }
 
 /* ---------------------------------------------------- */
-/* Ocultar el iframe inyectado por Netlify */
-iframe[src*="netlify"],
-div[class*="netlify"],
-#netlify-modal-backdrop,
-[data-netlify-deploy-id] {
+/* Ocultar contenedor inyectado por Netlify */
+.nl-wrap,
+.nl-card,
+.nl-badge,
+#nl-card,
+#nl-badge {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;

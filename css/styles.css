@@ -294,3 +294,15 @@ a {
     grid-template-columns: 1.4fr 1fr 1fr 1fr;
   }
 }
+
+/* ---------------------------------------------------- */
+/* Ocultar el iframe inyectado por Netlify */
+iframe[src*="netlify"],
+div[class*="netlify"],
+#netlify-modal-backdrop,
+[data-netlify-deploy-id] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

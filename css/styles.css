@@ -122,7 +122,8 @@ a {
 .header__logo {
   font-family: var(--fuente-titulo);
   font-weight: 800;
-  font-size: var(--fs-h3);
+  /* Se achica en celulares angostos para no chocar con el botón del menú */
+  font-size: clamp(14px, 4.4vw, var(--fs-h3));
   white-space: nowrap;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -439,6 +440,293 @@ a {
 }
 
 
+/* ---------- Cómo trabajamos ---------- */
+
+.pasos {
+  display: grid;
+  gap: var(--espacio-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paso {
+  padding-top: var(--espacio-4);
+  border-top: 2px solid var(--azul-santival);
+}
+
+.paso__numero {
+  display: block;
+  margin-bottom: var(--espacio-2);
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: var(--fs-h1);
+  line-height: 1;
+  color: var(--azul-santival);
+}
+
+.paso__nombre {
+  margin: 0 0 var(--espacio-2);
+  font-size: var(--fs-h3);
+}
+
+.paso p {
+  margin: 0;
+}
+
+
+/* ---------- Nosotros ---------- */
+
+.nosotros {
+  display: grid;
+  gap: var(--espacio-7);
+}
+
+.nosotros__texto p {
+  max-width: var(--ancho-texto);
+  margin: 0 0 var(--espacio-4);
+}
+
+.compromisos {
+  display: grid;
+  gap: var(--espacio-3);
+  margin: var(--espacio-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Marca cuadrada azul en vez de la viñeta redonda */
+.compromisos li {
+  position: relative;
+  padding-left: var(--espacio-5);
+}
+
+.compromisos li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background: var(--azul-santival);
+}
+
+.clientes {
+  align-self: start;
+  min-width: 0; /* evita que la pista del carrusel ensanche la columna */
+  padding: var(--espacio-5);
+  background: var(--blanco);
+  border-radius: var(--radio);
+}
+
+.clientes__titulo {
+  margin: 0 0 var(--espacio-4);
+  font-family: var(--fuente-texto);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--azul-santival);
+}
+
+/* ---------- Carrusel de logos ---------- */
+
+/* Ventana del carrusel: recorta lo que sobra y difumina los bordes */
+.carrusel {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+/* La pista lleva los logos dos veces y avanza la mitad de su ancho.
+   Se usa padding en cada logo (no gap) para que esa mitad calce exacta. */
+.carrusel__pista {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: carrusel 24s linear infinite;
+}
+
+.carrusel:hover .carrusel__pista {
+  animation-play-state: paused;
+}
+
+.carrusel__pista li {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  height: 104px;
+  padding-inline: var(--espacio-6);
+}
+
+/* Máximo 160 px de ancho: los originales miden ~260 px, así siguen viéndose nítidos */
+.carrusel__pista img {
+  width: auto;
+  height: auto;
+  max-width: 160px;
+  max-height: 56px;
+}
+
+/* El de Salfa es casi cuadrado: se le da más alto para que no quede diminuto */
+.carrusel__pista img[src*="salfa"] {
+  max-height: 84px;
+}
+
+@keyframes carrusel {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Si la persona pidió menos movimiento: logos quietos, en filas, sin la copia */
+@media (prefers-reduced-motion: reduce) {
+  .carrusel {
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+
+  .carrusel__pista {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    animation: none;
+  }
+
+  .carrusel__pista li[aria-hidden] {
+    display: none;
+  }
+}
+
+
+/* ---------- Contacto ---------- */
+
+.contacto {
+  display: grid;
+  gap: var(--espacio-7);
+}
+
+.contacto__info > p {
+  max-width: 48ch;
+  margin: 0 0 var(--espacio-5);
+}
+
+.contacto__datos {
+  display: grid;
+  gap: var(--espacio-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacto__dato-label {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acero);
+}
+
+.contacto__datos a {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Formulario */
+
+.formulario {
+  display: grid;
+  gap: var(--espacio-4);
+  padding: var(--espacio-5);
+  background: var(--hormigon);
+  border-radius: var(--radio);
+}
+
+.formulario__oculto {
+  display: none;
+}
+
+.campo {
+  display: grid;
+  gap: var(--espacio-1);
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo__opcional {
+  font-weight: 400;
+  color: var(--acero);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--espacio-3);
+  font: inherit;
+  color: var(--texto);
+  background: var(--blanco);
+  border: 1px solid var(--acero);
+  border-radius: var(--radio);
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo input:focus-visible,
+.campo select:focus-visible,
+.campo textarea:focus-visible {
+  outline: 2px solid var(--azul-santival);
+  outline-offset: 1px;
+}
+
+.formulario__enviar {
+  justify-self: start;
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+
+.whatsapp {
+  position: fixed;
+  right: var(--espacio-4);
+  bottom: var(--espacio-4);
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  min-height: 52px;
+  padding-inline: var(--espacio-4);
+  border-radius: 999px;
+  background: #1F7A4D; /* verde oscuro: texto blanco con buen contraste */
+  color: var(--blanco);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(10, 33, 54, 0.25);
+  transition: transform var(--transicion);
+}
+
+.whatsapp:hover {
+  transform: translateY(-2px);
+}
+
+.whatsapp__icono {
+  width: 26px;
+  height: 26px;
+}
+
+
 /* ---------- Footer ---------- */
 
 .footer {
@@ -498,7 +786,8 @@ a {
 
 .footer__legal {
   margin-top: var(--espacio-7);
-  padding-block: var(--espacio-5);
+  /* Abajo deja lugar para que el botón de WhatsApp no tape el texto */
+  padding-block: var(--espacio-5) 88px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -507,6 +796,7 @@ a {
 
 @media (min-width: 600px) {
   .obras,
+  .pasos,
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -582,6 +872,29 @@ a {
   .servicio__foto {
     width: 120px;
     height: 120px;
+  }
+
+  .pasos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nosotros {
+    grid-template-columns: 1.6fr 1fr;
+    gap: var(--espacio-8);
+  }
+
+  .contacto {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--espacio-8);
+  }
+
+  .formulario {
+    padding: var(--espacio-6);
+  }
+
+  .whatsapp {
+    right: var(--espacio-6);
+    bottom: var(--espacio-6);
   }
 
   .footer__grid {

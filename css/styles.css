@@ -297,13 +297,7 @@ a {
 
 /* ---------------------------------------------------- */
 /* Ocultar contenedor inyectado por Netlify */
-.nl-wrap,
-.nl-card,
-.nl-badge,
-#nl-card,
-#nl-badge {
+.nl-badge-frame {
   display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
+
 }

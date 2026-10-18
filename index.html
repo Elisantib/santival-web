@@ -19,7 +19,8 @@
 <body>
 
     <!-- ================= HEADER ================= -->
-    <header class="header">
+    <!-- header--sobre-hero: transparente sobre la foto, sólido al hacer scroll -->
+    <header class="header header--sobre-hero">
         <div class="contenedor header__inner">
 
             <!-- Reemplazar por <img src="img/logo.svg"> cuando llegue el logo vectorial -->
@@ -46,45 +47,196 @@
     </header>
 
     <main>
-        <!-- Semana 3: hero, obras y servicios -->
+
+        <!-- ================= HERO ================= -->
+        <section class="hero">
+            <img class="hero__foto" src="img/obras/containers-salfa.jpg"
+                 alt="Módulos de oficinas y baños sobre estructura metálica, montados por Santival para Salfa"
+                 width="1600" height="1200" fetchpriority="high">
+
+            <div class="contenedor hero__contenido">
+                <p class="etiqueta etiqueta--clara">Santival SpA · Santiago</p>
+                <h1 class="hero__titulo">Estructuras metálicas y obras civiles para constructoras e industria</h1>
+                <p class="hero__bajada">Fabricamos, montamos y terminamos. Desde galpones y soportes de gran tonelaje hasta la remodelación de una oficina.</p>
+                <a href="#obras" class="boton">Ver obras</a>
+            </div>
+        </section>
+
+        <!-- Tres datos duros, montados sobre el borde inferior del hero -->
+        <div class="contenedor">
+            <ul class="datos">
+                <li class="datos__item">
+                    <span class="datos__numero">5</span>
+                    <span class="datos__texto">constructoras nos confían sus obras, entre ellas Salfa, Precon y UPC</span>
+                </li>
+                <li class="datos__item">
+                    <span class="datos__numero">4</span>
+                    <span class="datos__texto">especialidades: estructuras, carpintería metálica, obras civiles y terminaciones</span>
+                </li>
+                <li class="datos__item">
+                    <span class="datos__numero">RM</span>
+                    <span class="datos__texto">obras en Chicureo, Recoleta, Macul y Américo Vespucio</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ================= OBRAS ================= -->
+        <!-- TODO: pedir al cliente superficie y año de cada obra -->
+        <section class="seccion" id="obras">
+            <div class="contenedor">
+                <p class="etiqueta">Obras entregadas</p>
+                <h2 class="seccion__titulo">Algunas de nuestras obras</h2>
+
+                <ul class="obras">
+                    <li class="obra">
+                        <img class="obra__foto" src="img/obras/containers-salfa.jpg"
+                             alt="Containers de oficinas y baños sobre estructura metálica de dos pisos, Salfa Américo Vespucio"
+                             width="1600" height="1200" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Estructura metálica</p>
+                            <h3 class="obra__nombre">Soporte y montaje de containers para oficinas y baños</h3>
+                            <p class="obra__meta">Américo Vespucio · Cliente: Salfa</p>
+                        </div>
+                    </li>
+                    <li class="obra">
+                        <img class="obra__foto" src="img/obras/barandas-chicureo.jpg"
+                             alt="Barandas metálicas de terraza en edificio de tres pisos en construcción, Chicureo"
+                             width="1056" height="1408" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Carpintería metálica</p>
+                            <h3 class="obra__nombre">Barandas de terraza, Centro Adulto Mayor</h3>
+                            <p class="obra__meta">Chicureo · Cliente: Precon</p>
+                        </div>
+                    </li>
+                    <li class="obra">
+                        <img class="obra__foto" src="img/obras/galpon-chicureo.jpg"
+                             alt="Estructura metálica de techumbre para galpón de clima y eléctrico, Chicureo"
+                             width="1056" height="1408" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Estructura metálica</p>
+                            <h3 class="obra__nombre">Galpón de clima y eléctrico, Centro Adulto Mayor</h3>
+                            <p class="obra__meta">Chicureo · Cliente: Precon</p>
+                        </div>
+                    </li>
+                    <li class="obra">
+                        <img class="obra__foto" src="img/obras/estanterias-salfa.jpg"
+                             alt="Estanterías metálicas azules instaladas en centro de distribución de Salfa"
+                             width="1104" height="497" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Carpintería metálica</p>
+                            <h3 class="obra__nombre">Estanterías para centro de distribución</h3>
+                            <p class="obra__meta">Américo Vespucio · Cliente: Salfa</p>
+                        </div>
+                    </li>
+                    <li class="obra">
+                        <img class="obra__foto" src="img/obras/puertas-plaza-peru.jpg"
+                             alt="Puertas metálicas de celosía para sala de bombas, edificio Plaza Perú II, Recoleta"
+                             width="529" height="502" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Carpintería metálica</p>
+                            <h3 class="obra__nombre">Puertas, rejas y marcos, edificio Plaza Perú II</h3>
+                            <p class="obra__meta">Recoleta · Cliente: Constructora UPC</p>
+                        </div>
+                    </li>
+                    <li class="obra">
+                        <img class="obra__foto" src="img/obras/oficina-macul.jpg"
+                             alt="Oficina gerencial remodelada con piso flotante, cielo modular y muros pintados, Macul"
+                             width="664" height="498" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Terminaciones</p>
+                            <h3 class="obra__nombre">Remodelación de oficina gerencial, Los 3 Antonios</h3>
+                            <p class="obra__meta">Macul · Cliente: Inversiones San Jorge</p>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Semana 5: agregar enlace "Ver todas las obras" a obras.html -->
+            </div>
+        </section>
+
+        <!-- ================= SERVICIOS ================= -->
+        <section class="seccion seccion--hormigon" id="servicios">
+            <div class="contenedor">
+                <p class="etiqueta">Servicios</p>
+                <h2 class="seccion__titulo">Qué hacemos</h2>
+
+                <ul class="servicios">
+                    <li class="servicio">
+                        <img class="servicio__foto" src="img/obras/galpon-chicureo.jpg"
+                             alt="" width="1056" height="1408" loading="lazy">
+                        <div>
+                            <h3 class="servicio__nombre">Estructuras metálicas</h3>
+                            <p>Fabricación, montaje y pintura de estructuras de gran tonelaje: galpones, techumbres y soportes para containers.</p>
+                        </div>
+                    </li>
+                    <li class="servicio">
+                        <img class="servicio__foto" src="img/obras/estanteria-fabricacion.jpg"
+                             alt="" width="1104" height="497" loading="lazy">
+                        <div>
+                            <h3 class="servicio__nombre">Carpintería metálica</h3>
+                            <p>Barandas, rejas, puertas de celosía y estanterías industriales fabricadas a medida para cada obra.</p>
+                        </div>
+                    </li>
+                    <li class="servicio">
+                        <img class="servicio__foto" src="img/obras/cubierta-salfa.jpg"
+                             alt="" width="590" height="1280" loading="lazy">
+                        <div>
+                            <h3 class="servicio__nombre">Obras civiles y mantención</h3>
+                            <p>Obras civiles e industriales, y mantención de cubiertas de galpón: cambio de planchas, extractores eólicos y canaletas.</p>
+                        </div>
+                    </li>
+                    <li class="servicio">
+                        <img class="servicio__foto" src="img/obras/oficina-escritorio.jpg"
+                             alt="" width="664" height="498" loading="lazy">
+                        <div>
+                            <h3 class="servicio__nombre">Terminaciones</h3>
+                            <p>Remodelación de oficinas y locales: pisos, cielos, pintura y mobiliario, hasta dejarlos listos para usar.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Semana 4: cómo trabajamos, nosotros y contacto -->
+
     </main>
 
     <!-- ================= FOOTER ================= -->
-    <!-- TODO: reemplazar los datos entre [corchetes] con los del brief -->
     <footer class="footer">
         <div class="contenedor footer__grid">
 
             <div class="footer__col">
                 <p class="footer__marca">Santival</p>
-                <p>Santival Construcciones</p>
+                <p>Santival SpA<br>RUT 77.710.506-K<br>Construcción de obras civiles e industriales</p>
             </div>
 
             <div class="footer__col">
                 <h2 class="footer__titulo">Contacto</h2>
                 <ul class="footer__lista">
+                    <li>Diego Valenzuela</li>
                     <li><a href="tel:+56933861293">+56 9 3386 1293</a></li>
                     <li><a href="mailto:dvalenzuela.santival@gmail.com">dvalenzuela.santival@gmail.com</a></li>
-                    <li>Santiago, Chile</li>
+                    <!-- TODO: confirmar la comuna de la dirección tributaria -->
+                    <li>Félix Contreras 3966</li>
                 </ul>
             </div>
 
             <div class="footer__col">
                 <h2 class="footer__titulo">Dónde trabajamos</h2>
-                <p>Santiago, Chile</p>
+                <p>Trabajamos en todo Chile</p>
             </div>
 
             <div class="footer__col">
                 <h2 class="footer__titulo">Síguenos</h2>
                 <ul class="footer__lista">
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/santival.construcciones/">Instagram</a></li>
+                    <li><a href="https://wa.me/56933861293">WhatsApp</a></li>
                 </ul>
             </div>
 
         </div>
 
         <div class="contenedor footer__legal">
-            <p>© 2026 [Razón social]. Todos los derechos reservados.</p>
+            <p>© 2026 Santival SpA. Todos los derechos reservados.</p>
         </div>
     </footer>
 

@@ -485,30 +485,6 @@ a {
   margin: 0 0 var(--espacio-4);
 }
 
-.compromisos {
-  display: grid;
-  gap: var(--espacio-3);
-  margin: var(--espacio-5) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Marca cuadrada azul en vez de la viñeta redonda */
-.compromisos li {
-  position: relative;
-  padding-left: var(--espacio-5);
-}
-
-.compromisos li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 8px;
-  height: 8px;
-  background: var(--azul-santival);
-}
-
 .clientes {
   align-self: start;
   min-width: 0; /* evita que la pista del carrusel ensanche la columna */

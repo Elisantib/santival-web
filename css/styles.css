@@ -211,6 +211,13 @@ a {
   text-underline-offset: 4px;
 }
 
+/* Página en la que está la persona */
+.header__lista a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
 /* El teléfono es el único elemento con acento del header.
    Texto oscuro sobre ámbar: el blanco no pasa contraste. */
 .header__telefono {
@@ -401,6 +408,223 @@ a {
   margin: 0;
   font-size: 15px;
   color: var(--acero);
+}
+
+.obras__mas {
+  margin: var(--espacio-6) 0 0;
+  text-align: center;
+}
+
+/* Tarjetas de obras.html: el botón del título cubre toda la tarjeta,
+   así se puede hacer clic en cualquier parte (foto incluida) */
+.obra--abrible {
+  position: relative;
+  transition: box-shadow var(--transicion), transform var(--transicion);
+}
+
+.obra--abrible:hover {
+  box-shadow: var(--sombra);
+  transform: translateY(-2px);
+}
+
+.obra__abrir {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.obra__abrir::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.obra__abrir:focus-visible {
+  outline: none;
+}
+
+.obra--abrible:has(.obra__abrir:focus-visible) {
+  outline: 2px solid var(--ambar);
+  outline-offset: 3px;
+}
+
+
+/* ---------- Título de páginas internas ---------- */
+
+.pagina-titulo {
+  padding-block: var(--espacio-7);
+  background: var(--hormigon);
+}
+
+.pagina-titulo__h1 {
+  margin: 0 0 var(--espacio-3);
+  font-size: clamp(32px, 6vw, var(--fs-display));
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.pagina-titulo__bajada {
+  max-width: 60ch;
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+
+
+/* ---------- Cierre con llamado a contacto ---------- */
+
+.cierre {
+  text-align: center;
+}
+
+.cierre__titulo {
+  margin: 0 0 var(--espacio-2);
+  font-size: var(--fs-h1);
+}
+
+.cierre p {
+  margin: 0 0 var(--espacio-5);
+}
+
+
+/* ---------- Visor de obras ---------- */
+
+.visor {
+  width: min(100% - 2 * var(--espacio-4), 1040px);
+  max-height: calc(100vh - 2 * var(--espacio-4));
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio);
+  color: var(--texto);
+  box-shadow: 0 24px 64px rgba(10, 33, 54, 0.4);
+}
+
+.visor::backdrop {
+  background: rgba(10, 33, 54, 0.75);
+}
+
+.visor__marco {
+  position: relative;
+  display: grid;
+}
+
+.visor__cerrar {
+  position: absolute;
+  top: var(--espacio-3);
+  right: var(--espacio-3);
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(10, 33, 54, 0.75);
+  color: var(--blanco);
+  cursor: pointer;
+}
+
+.visor__cerrar svg {
+  width: 22px;
+  height: 22px;
+}
+
+.visor__galeria {
+  background: var(--azul-obra);
+}
+
+/* La foto se ve completa (sin recortar) dentro de un área de alto fijo */
+.visor__principal {
+  display: grid;
+  place-items: center;
+  height: min(56vh, 520px);
+}
+
+.visor__principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.visor__controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-4);
+  padding: var(--espacio-2);
+  color: var(--blanco);
+}
+
+.visor__controles[hidden] {
+  display: none;
+}
+
+.visor__flecha {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.visor__flecha:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.visor__contador {
+  min-width: 6ch;
+  font-size: var(--fs-small);
+  text-align: center;
+}
+
+.visor__info {
+  padding: var(--espacio-5);
+}
+
+.visor__tipo {
+  margin: 0 0 var(--espacio-1);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--azul-santival);
+}
+
+.visor__nombre {
+  margin: 0 0 var(--espacio-4);
+  font-size: var(--fs-h2);
+}
+
+.visor__datos {
+  display: grid;
+  gap: var(--espacio-3);
+  margin: 0 0 var(--espacio-4);
+}
+
+.visor__datos dt {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acero);
+}
+
+.visor__datos dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.visor__texto {
+  margin: 0;
 }
 
 
@@ -957,6 +1181,28 @@ a {
   .whatsapp {
     right: var(--espacio-6);
     bottom: var(--espacio-6);
+  }
+
+  .pagina-titulo {
+    padding-block: var(--espacio-8);
+  }
+
+  /* Visor: foto a la izquierda, datos a la derecha */
+  .visor__marco {
+    grid-template-columns: 1.7fr 1fr;
+  }
+
+  .visor__galeria {
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+
+  .visor__principal {
+    height: min(72vh, 640px);
+  }
+
+  .visor__info {
+    padding: var(--espacio-7) var(--espacio-6) var(--espacio-6);
   }
 
   .footer__grid {

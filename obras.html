@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras | Santival · Estructuras metálicas y obras civiles</title>
+    <meta name="description" content="Obras de Santival SpA para Salfa, Precon, Constructora UPC e Inversiones San Jorge: estructuras metálicas, carpintería metálica, obras civiles y mantención de cubiertas en Santiago.">
+    <link rel="canonical" href="https://santival.cl/obras.html">
+
+    <!-- Vista previa al compartir el enlace (WhatsApp, LinkedIn, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Santival Construcciones">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:title" content="Obras de Santival · Estructuras metálicas y obras civiles">
+    <meta property="og:description" content="Estructuras metálicas, carpintería metálica, obras civiles y mantenciones para constructoras y empresas.">
+    <meta property="og:url" content="https://santival.cl/obras.html">
+    <meta property="og:image" content="https://santival.cl/img/obras/barandas-chicureo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Barlow:wght@400;600&display=swap">
+
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <!-- En las páginas internas el header es sólido desde el inicio (no hay foto de fondo) -->
+    <header class="header">
+        <div class="contenedor header__inner">
+
+            <a href="index.html" class="header__logo">
+                <img src="img/logo-blanco.png" alt="Sant &amp; Val Construcciones" width="517" height="116">
+            </a>
+
+            <button class="header__toggle" type="button"
+                    aria-expanded="false" aria-controls="menu-principal">
+                <span class="header__toggle-barra"></span>
+                <span class="visualmente-oculto">Abrir menú</span>
+            </button>
+
+            <nav class="header__nav" id="menu-principal" aria-label="Principal">
+                <ul class="header__lista">
+                    <li><a href="obras.html" aria-current="page">Obras</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="tel:+56933861293" class="header__telefono">+56 9 3386 1293</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= TÍTULO DE PÁGINA ================= -->
+        <section class="pagina-titulo">
+            <div class="contenedor">
+                <p class="etiqueta">Portafolio</p>
+                <h1 class="pagina-titulo__h1">Nuestras obras</h1>
+                <p class="pagina-titulo__bajada">Trabajos de estructuras metálicas, carpintería metálica, obras civiles y mantención para constructoras y empresas. Haz clic en una obra para ver sus fotos.</p>
+            </div>
+        </section>
+
+        <!-- ================= GRILLA DE OBRAS ================= -->
+        <!-- Cada obra trae su detalle en un <template>: main.js lo copia al visor al abrirla.
+             TODO: pedir al cliente el año de cada obra para agregarlo a los datos. -->
+        <section class="seccion">
+            <div class="contenedor">
+                <ul class="obras">
+
+                    <li class="obra obra--abrible">
+                        <img class="obra__foto" src="img/obras/containers-salfa.jpg"
+                             alt="Containers de oficinas y baños sobre estructura metálica de dos pisos, Salfa Américo Vespucio"
+                             width="1600" height="1200" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Estructura metálica</p>
+                            <h2 class="obra__nombre">
+                                <button class="obra__abrir" type="button">Soporte y montaje de containers para oficinas y baños</button>
+                            </h2>
+                            <p class="obra__meta">Américo Vespucio · Cliente: Salfa</p>
+                        </div>
+                        <template class="obra__detalle">
+                            <p class="visor__tipo">Estructura metálica</p>
+                            <h2 class="visor__nombre" id="visor-titulo">Soporte y montaje de containers para oficinas y baños</h2>
+                            <dl class="visor__datos">
+                                <div><dt>Cliente</dt><dd>Salfa</dd></div>
+                                <div><dt>Ubicación</dt><dd>Américo Vespucio, Santiago</dd></div>
+                            </dl>
+                            <p class="visor__texto">Fabricación y montaje de la estructura metálica de soporte para containers de baños y oficinas, y montaje de los containers sobre ella.</p>
+                            <ul class="visor__fotos">
+                                <li><img src="img/obras/containers-salfa.jpg" alt="Containers de oficinas y baños montados en dos pisos sobre estructura metálica" width="1600" height="1200"></li>
+                            </ul>
+                        </template>
+                    </li>
+
+                    <li class="obra obra--abrible">
+                        <img class="obra__foto" src="img/obras/barandas-chicureo.jpg"
+                             alt="Barandas metálicas de terraza en edificio de tres pisos en construcción, Chicureo"
+                             width="1056" height="1408" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Carpintería metálica</p>
+                            <h2 class="obra__nombre">
+                                <button class="obra__abrir" type="button">Barandas de terraza, Centro Adulto Mayor</button>
+                            </h2>
+                            <p class="obra__meta">Chicureo · Cliente: Precon</p>
+                        </div>
+                        <template class="obra__detalle">
+                            <p class="visor__tipo">Carpintería metálica</p>
+                            <h2 class="visor__nombre" id="visor-titulo">Barandas de terraza, Centro Adulto Mayor</h2>
+                            <dl class="visor__datos">
+                                <div><dt>Cliente</dt><dd>Precon Constructora</dd></div>
+                                <div><dt>Ubicación</dt><dd>Chicureo, Colina</dd></div>
+                            </dl>
+                            <p class="visor__texto">Barandas metálicas para las terrazas del edificio del Centro Adulto Mayor de Chicureo.</p>
+                            <ul class="visor__fotos">
+                                <li><img src="img/obras/barandas-chicureo.jpg" alt="Edificio de tres pisos con barandas metálicas en sus terrazas" width="1056" height="1408"></li>
+                                <li><img src="img/obras/barandas-chicureo-detalle.jpg" alt="Detalle de barandas metálicas instaladas en dos terrazas" width="960" height="1280"></li>
+                            </ul>
+                        </template>
+                    </li>
+
+                    <li class="obra obra--abrible">
+                        <img class="obra__foto" src="img/obras/galpon-chicureo.jpg"
+                             alt="Estructura metálica de techumbre para galpón de clima y eléctrico, Chicureo"
+                             width="1056" height="1408" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Estructura metálica</p>
+                            <h2 class="obra__nombre">
+                                <button class="obra__abrir" type="button">Galpón de clima y eléctrico, Centro Adulto Mayor</button>
+                            </h2>
+                            <p class="obra__meta">Chicureo · Cliente: Precon</p>
+                        </div>
+                        <template class="obra__detalle">
+                            <p class="visor__tipo">Estructura metálica</p>
+                            <h2 class="visor__nombre" id="visor-titulo">Galpón de clima y eléctrico, Centro Adulto Mayor</h2>
+                            <dl class="visor__datos">
+                                <div><dt>Cliente</dt><dd>Precon Constructora</dd></div>
+                                <div><dt>Ubicación</dt><dd>Chicureo, Colina</dd></div>
+                            </dl>
+                            <p class="visor__texto">Estructura metálica de techumbre para el galpón de equipos de clima y eléctricos del Centro Adulto Mayor de Chicureo.</p>
+                            <ul class="visor__fotos">
+                                <li><img src="img/obras/galpon-chicureo.jpg" alt="Vigas y costaneras metálicas de la techumbre del galpón, sobre muros de hormigón" width="1056" height="1408"></li>
+                                <li><img src="img/obras/galpon-chicureo-2.jpg" alt="Estructura metálica del galpón vista desde el interior, con andamios" width="1056" height="1408"></li>
+                            </ul>
+                        </template>
+                    </li>
+
+                    <li class="obra obra--abrible">
+                        <img class="obra__foto" src="img/obras/estanterias-salfa.jpg"
+                             alt="Estanterías metálicas azules instaladas en centro de distribución de Salfa"
+                             width="1104" height="497" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Carpintería metálica</p>
+                            <h2 class="obra__nombre">
+                                <button class="obra__abrir" type="button">Estanterías para centro de distribución</button>
+                            </h2>
+                            <p class="obra__meta">Américo Vespucio · Cliente: Salfa</p>
+                        </div>
+                        <template class="obra__detalle">
+                            <p class="visor__tipo">Carpintería metálica</p>
+                            <h2 class="visor__nombre" id="visor-titulo">Estanterías para centro de distribución</h2>
+                            <dl class="visor__datos">
+                                <div><dt>Cliente</dt><dd>Salfa</dd></div>
+                                <div><dt>Ubicación</dt><dd>Américo Vespucio, Santiago</dd></div>
+                            </dl>
+                            <p class="visor__texto">Fabricación y montaje de estanterías metálicas para el centro de distribución de Salfa.</p>
+                            <ul class="visor__fotos">
+                                <li><img src="img/obras/estanterias-salfa.jpg" alt="Estanterías metálicas azules instaladas, con cajas en sus niveles" width="1104" height="497"></li>
+                                <li><img src="img/obras/estanteria-fabricacion.jpg" alt="Estantería metálica azul terminada, antes de su instalación" width="1104" height="497"></li>
+                            </ul>
+                        </template>
+                    </li>
+
+                    <li class="obra obra--abrible">
+                        <img class="obra__foto" src="img/obras/puertas-plaza-peru.jpg"
+                             alt="Puertas metálicas de celosía para sala de bombas, edificio Plaza Perú II, Recoleta"
+                             width="529" height="502" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Carpintería metálica</p>
+                            <h2 class="obra__nombre">
+                                <button class="obra__abrir" type="button">Puertas, rejas y marcos, edificio Plaza Perú II</button>
+                            </h2>
+                            <p class="obra__meta">Recoleta · Cliente: Constructora UPC</p>
+                        </div>
+                        <template class="obra__detalle">
+                            <p class="visor__tipo">Carpintería metálica</p>
+                            <h2 class="visor__nombre" id="visor-titulo">Puertas, rejas y marcos, edificio Plaza Perú II</h2>
+                            <dl class="visor__datos">
+                                <div><dt>Cliente</dt><dd>Constructora UPC</dd></div>
+                                <div><dt>Ubicación</dt><dd>Recoleta, Santiago</dd></div>
+                            </dl>
+                            <p class="visor__texto">Carpintería metálica para el edificio Plaza Perú II: puertas de celosía, rejas y marcos metálicos.</p>
+                            <ul class="visor__fotos">
+                                <li><img src="img/obras/puertas-plaza-peru.jpg" alt="Puertas metálicas de celosía abiertas en una sala de bombas" width="529" height="502"></li>
+                                <li><img src="img/obras/marco-plaza-peru.jpg" alt="Marco metálico amarillo instalado en un muro de hormigón" width="754" height="988"></li>
+                                <li><img src="img/obras/reja-plaza-peru.jpg" alt="Reja metálica de barrotes instalada junto a un muro" width="529" height="430"></li>
+                            </ul>
+                        </template>
+                    </li>
+
+                    <li class="obra obra--abrible">
+                        <img class="obra__foto" src="img/obras/oficina-macul.jpg"
+                             alt="Oficina gerencial remodelada con piso flotante, cielo modular y muros pintados, Macul"
+                             width="664" height="498" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Obras civiles</p>
+                            <h2 class="obra__nombre">
+                                <button class="obra__abrir" type="button">Remodelación de oficina gerencial, Los 3 Antonios</button>
+                            </h2>
+                            <p class="obra__meta">Macul · Cliente: Inversiones San Jorge</p>
+                        </div>
+                        <template class="obra__detalle">
+                            <p class="visor__tipo">Obras civiles</p>
+                            <h2 class="visor__nombre" id="visor-titulo">Remodelación de oficina gerencial, Los 3 Antonios</h2>
+                            <dl class="visor__datos">
+                                <div><dt>Cliente</dt><dd>Inversiones San Jorge</dd></div>
+                                <div><dt>Ubicación</dt><dd>Macul, Santiago</dd></div>
+                            </dl>
+                            <p class="visor__texto">Remodelación de la oficina gerencial del local Los 3 Antonios, en Macul.</p>
+                            <ul class="visor__fotos">
+                                <li><img src="img/obras/oficina-macul-proceso.jpg" alt="Oficina durante la remodelación, con escaleras y materiales de pintura" width="677" height="508"></li>
+                                <li><img src="img/obras/oficina-macul.jpg" alt="Oficina remodelada con piso flotante, cielo modular y muros pintados" width="664" height="498"></li>
+                                <li><img src="img/obras/oficina-macul-mueble.jpg" alt="Oficina remodelada con mueble de madera y ventanal" width="677" height="498"></li>
+                                <li><img src="img/obras/oficina-escritorio.jpg" alt="Escritorio de madera instalado en la oficina remodelada" width="664" height="498"></li>
+                            </ul>
+                        </template>
+                    </li>
+
+                    <li class="obra obra--abrible">
+                        <img class="obra__foto" src="img/obras/cubierta-salfa-eolicos.jpg"
+                             alt="Cubierta de galpón con extractores eólicos nuevos, Salfa Américo Vespucio"
+                             width="441" height="588" loading="lazy">
+                        <div class="obra__info">
+                            <p class="obra__tipo">Mantenciones</p>
+                            <h2 class="obra__nombre">
+                                <button class="obra__abrir" type="button">Mantención de cubierta, galpón de neumáticos</button>
+                            </h2>
+                            <p class="obra__meta">Américo Vespucio · Cliente: Salfa</p>
+                        </div>
+                        <template class="obra__detalle">
+                            <p class="visor__tipo">Mantenciones</p>
+                            <h2 class="visor__nombre" id="visor-titulo">Mantención de cubierta, galpón de neumáticos</h2>
+                            <dl class="visor__datos">
+                                <div><dt>Cliente</dt><dd>Salfa</dd></div>
+                                <div><dt>Ubicación</dt><dd>Américo Vespucio, Santiago</dd></div>
+                            </dl>
+                            <p class="visor__texto">Arreglo y mantención de la cubierta del galpón de neumáticos: cambio de planchas, extractores eólicos y canaletas.</p>
+                            <ul class="visor__fotos">
+                                <li><img src="img/obras/cubierta-salfa-eolicos.jpg" alt="Extractores eólicos instalados en la cubierta del galpón" width="441" height="588"></li>
+                            </ul>
+                        </template>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= LLAMADO A CONTACTO ================= -->
+        <section class="seccion seccion--hormigon">
+            <div class="contenedor cierre">
+                <h2 class="cierre__titulo">¿Tienes un proyecto parecido?</h2>
+                <p>Cuéntanos qué necesitas y lo revisamos.</p>
+                <a href="contacto.html" class="boton">Ir a contacto</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Visor de obra. main.js copia aquí el <template> de la obra que se abre. -->
+    <dialog class="visor" id="visor-obra" aria-labelledby="visor-titulo">
+        <div class="visor__marco">
+            <button class="visor__cerrar" type="button" aria-label="Cerrar">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+
+            <div class="visor__galeria">
+                <div class="visor__principal"></div>
+                <div class="visor__controles">
+                    <button class="visor__flecha" type="button" data-paso="-1" aria-label="Foto anterior">‹</button>
+                    <span class="visor__contador" aria-live="polite"></span>
+                    <button class="visor__flecha" type="button" data-paso="1" aria-label="Foto siguiente">›</button>
+                </div>
+            </div>
+
+            <div class="visor__info"></div>
+        </div>
+    </dialog>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a class="whatsapp" href="https://wa.me/56933861293?text=Hola%2C%20quiero%20cotizar%20un%20trabajo"
+       target="_blank" rel="noopener">
+        <svg class="whatsapp__icono" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M9 8.2c.2-.4.5-.4.8-.4h.4c.2 0 .4 0 .5.4l.6 1.4c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3 0 .5.3.5.8 1.1 1.3 1.5.5.4 1 .7 1.4.9.2.1.4 0 .5-.1l.6-.7c.1-.2.3-.2.5-.1l1.4.7c.2.1.3.2.3.4 0 .5-.2 1-.6 1.3-.4.3-1 .5-1.6.4-.9-.2-2.1-.7-3.3-1.8-1.3-1.2-2-2.5-2.2-3.3-.2-.7 0-1.4.3-1.8Z" fill="currentColor"/>
+        </svg>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="contenedor footer__grid">
+
+            <div class="footer__col">
+                <p class="footer__marca">Santival</p>
+                <p>Santival SpA<br>RUT 77.710.506-K<br>Construcción de obras civiles e industriales</p>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Contacto</h2>
+                <ul class="footer__lista">
+                    <li>Diego Valenzuela</li>
+                    <li><a href="tel:+56933861293">+56 9 3386 1293</a></li>
+                    <li><a href="mailto:dvalenzuela.santival@gmail.com">dvalenzuela.santival@gmail.com</a></li>
+                    <li>Félix Contreras 3966</li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Dónde trabajamos</h2>
+                <p>Trabajamos en todo Chile</p>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Síguenos</h2>
+                <ul class="footer__lista">
+                    <li><a href="https://www.instagram.com/santival.construcciones/">Instagram</a></li>
+                    <li><a href="https://wa.me/56933861293">WhatsApp</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="contenedor footer__legal">
+            <p>© 2026 Santival SpA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

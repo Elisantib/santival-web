@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santival Construcciones</title>
 
-    <!-- Fuentes: Archivo (titulares) y Barlow (texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Barlow:wght@400;600&display=swap">
 
-    <!-- Estilos: primero los tokens, después el resto -->
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -19,12 +17,12 @@
 <body>
 
     <!-- ================= HEADER ================= -->
-    <!-- header--sobre-hero: transparente sobre la foto, sólido al hacer scroll -->
     <header class="header header--sobre-hero">
         <div class="contenedor header__inner">
 
-            <!-- Reemplazar por <img src="img/logo.svg"> cuando llegue el logo vectorial -->
-            <a href="index.html" class="header__logo">Santival Construcciones</a>
+            <a href="index.html" class="header__logo">
+                <img src="img/logo-blanco.png" alt="Sant &amp; Val Construcciones" width="517" height="116">
+            </a>
 
             <button class="header__toggle" type="button"
                     aria-expanded="false" aria-controls="menu-principal">
@@ -39,7 +37,6 @@
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <!-- TODO: teléfono real del cliente -->
                 <a href="tel:+56933861293" class="header__telefono">+56 9 3386 1293</a>
             </nav>
 
@@ -62,7 +59,6 @@
             </div>
         </section>
 
-        <!-- Tres datos duros, montados sobre el borde inferior del hero -->
         <div class="contenedor">
             <ul class="datos">
                 <li class="datos__item">
@@ -81,7 +77,6 @@
         </div>
 
         <!-- ================= OBRAS ================= -->
-        <!-- TODO: pedir al cliente superficie y año de cada obra -->
         <section class="seccion" id="obras">
             <div class="contenedor">
                 <p class="etiqueta">Obras entregadas</p>
@@ -149,7 +144,6 @@
                         </div>
                     </li>
                 </ul>
-                <!-- Semana 5: agregar enlace "Ver todas las obras" a obras.html -->
             </div>
         </section>
 
@@ -197,7 +191,6 @@
         </section>
 
         <!-- ================= CÓMO TRABAJAMOS ================= -->
-        <!-- TODO: validar los 4 pasos con Diego (visita a terreno, cotización por partida, garantía) -->
         <section class="seccion" id="proceso">
             <div class="contenedor">
                 <p class="etiqueta">Cómo trabajamos</p>
@@ -229,7 +222,6 @@
         </section>
 
         <!-- ================= NOSOTROS ================= -->
-        <!-- TODO: agregar una foto real del equipo o de Diego en obra -->
         <section class="seccion seccion--hormigon" id="nosotros">
             <div class="contenedor nosotros">
 
@@ -249,9 +241,6 @@
 
                 <div class="clientes">
                     <h3 class="clientes__titulo">Han confiado en nosotros</h3>
-                    <!-- Carrusel infinito: la lista de logos va dos veces seguidas y la pista
-                         se desplaza la mitad de su ancho, así el final empalma con el inicio.
-                         La segunda copia está oculta para lectores de pantalla. -->
                     <div class="carrusel">
                         <ul class="carrusel__pista">
                             <li><img src="img/clientes/salfa.jpg" alt="Salfa" width="283" height="274"></li>
@@ -317,6 +306,12 @@
                     </div>
 
                     <div class="campo">
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" name="email" type="email" autocomplete="email"
+                               placeholder="nombre@empresa.cl" required>
+                    </div>
+
+                    <div class="campo">
                         <label for="telefono">Teléfono</label>
                         <input id="telefono" name="telefono" type="tel" autocomplete="tel"
                                placeholder="+56 9 1234 5678" required>
@@ -347,7 +342,21 @@
 
     </main>
 
-    <!-- Botón flotante de WhatsApp, con mensaje prellenado -->
+    <!-- Modal de confirmación del formulario. -->
+    <dialog class="modal" id="modal-envio" aria-labelledby="modal-titulo">
+        <div class="modal__contenido">
+            <div class="modal__icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h2 class="modal__titulo" id="modal-titulo">¡Gracias por escribirnos!</h2>
+            <p class="modal__texto">Recibimos tu mensaje. Revisaremos tu proyecto y te contactaremos a la brevedad.</p>
+            <form method="dialog">
+                <button class="boton modal__cerrar">Cerrar</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Botón flotante de WhatsApp -->
     <a class="whatsapp" href="https://wa.me/56933861293?text=Hola%2C%20quiero%20cotizar%20un%20trabajo"
        target="_blank" rel="noopener">
         <svg class="whatsapp__icono" viewBox="0 0 24 24" aria-hidden="true">
@@ -372,7 +381,6 @@
                     <li>Diego Valenzuela</li>
                     <li><a href="tel:+56933861293">+56 9 3386 1293</a></li>
                     <li><a href="mailto:dvalenzuela.santival@gmail.com">dvalenzuela.santival@gmail.com</a></li>
-                    <!-- TODO: confirmar la comuna de la dirección tributaria -->
                     <li>Félix Contreras 3966</li>
                 </ul>
             </div>

@@ -120,17 +120,15 @@ a {
 }
 
 .header__logo {
-  font-family: var(--fuente-titulo);
-  font-weight: 800;
-  /* Se achica en celulares angostos para no chocar con el botón del menú */
-  font-size: clamp(14px, 4.4vw, var(--fs-h3));
-  white-space: nowrap;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  text-decoration: none;
+  display: block;
+  flex-shrink: 0;
 }
 
-/* Botón hamburguesa: tres barras hechas con un span y sus ::before/::after */
+.header__logo img {
+  width: auto;
+  height: 40px;
+}
+
 .header__toggle {
   width: 44px;
   height: 44px;
@@ -696,6 +694,95 @@ a {
 }
 
 
+.formulario__enviar:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+
+/* ---------- Modal de confirmación ---------- */
+
+.modal {
+  width: min(100% - 2 * var(--espacio-4), 440px);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio);
+  box-shadow: 0 24px 64px rgba(10, 33, 54, 0.35);
+  color: var(--texto);
+}
+
+.modal::backdrop {
+  background: rgba(10, 33, 54, 0.6);
+}
+
+.modal__contenido {
+  padding: var(--espacio-7) var(--espacio-6) var(--espacio-6);
+  text-align: center;
+}
+
+.modal__icono {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--espacio-4);
+  border-radius: 50%;
+  background: var(--azul-santival);
+  color: var(--blanco);
+}
+
+.modal__icono svg {
+  width: 32px;
+  height: 32px;
+}
+
+.modal--error .modal__icono {
+  background: var(--ambar);
+  color: var(--texto);
+}
+
+.modal--error .modal__icono svg {
+  display: none;
+}
+
+.modal--error .modal__icono::after {
+  content: "!";
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 32px;
+}
+
+.modal__titulo {
+  margin: 0 0 var(--espacio-2);
+  font-size: var(--fs-h2);
+}
+
+.modal__texto {
+  margin: 0 0 var(--espacio-5);
+}
+
+.modal__cerrar {
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Entrada suave, salvo que la persona haya pedido menos movimiento */
+@media (prefers-reduced-motion: no-preference) {
+  .modal[open] {
+    animation: modal-entrada 200ms ease-out;
+  }
+
+  @keyframes modal-entrada {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+}
+
+
 /* ---------- Botón flotante de WhatsApp ---------- */
 
 .whatsapp {
@@ -815,11 +902,10 @@ a {
     min-height: 80px;
   }
 
-  .header__logo {
-    font-size: var(--fs-h2);
+  .header__logo img {
+    height: 52px;
   }
 
-  /* Desaparece la hamburguesa y el menú queda siempre visible en línea */
   .header__toggle {
     display: none;
   }

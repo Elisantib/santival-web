@@ -297,10 +297,10 @@
                     </ul>
                 </div>
 
-                <!-- Netlify detecta este formulario al publicar gracias a data-netlify="true".
-                     netlify-honeypot: campo oculto que solo llenan los bots, para filtrar spam. -->
                 <form class="formulario" name="contacto" method="POST"
                       data-netlify="true" netlify-honeypot="bot-field">
+
+                    <input type="hidden" name="form-name" value="contacto">
 
                     <p class="formulario__oculto">
                         <label>No llenar este campo: <input name="bot-field"></label>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Santival · Cotiza tu proyecto</title>
+    <meta name="description" content="Cotiza estructuras metálicas, carpintería metálica, obras civiles o mantenciones con Santival SpA. Escríbenos por WhatsApp al +56 9 3386 1293 o mediante el formulario.">
+    <link rel="canonical" href="https://santival.cl/contacto.html">
+
+    <!-- Vista previa al compartir el enlace (WhatsApp, LinkedIn, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Santival Construcciones">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:title" content="Contacto · Santival Construcciones">
+    <meta property="og:description" content="Cuéntanos qué necesitas construir. Escríbenos por WhatsApp o mediante el formulario.">
+    <meta property="og:url" content="https://santival.cl/contacto.html">
+    <meta property="og:image" content="https://santival.cl/img/obras/containers-salfa.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Barlow:wght@400;600&display=swap">
+
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="contenedor header__inner">
+
+            <a href="index.html" class="header__logo">
+                <img src="img/logo-blanco.png" alt="Sant &amp; Val Construcciones" width="517" height="116">
+            </a>
+
+            <button class="header__toggle" type="button"
+                    aria-expanded="false" aria-controls="menu-principal">
+                <span class="header__toggle-barra"></span>
+                <span class="visualmente-oculto">Abrir menú</span>
+            </button>
+
+            <nav class="header__nav" id="menu-principal" aria-label="Principal">
+                <ul class="header__lista">
+                    <li><a href="obras.html">Obras</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+                </ul>
+                <a href="tel:+56933861293" class="header__telefono">+56 9 3386 1293</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= CONTACTO ================= -->
+        <section class="seccion">
+            <div class="contenedor contacto">
+
+                <div class="contacto__info">
+                    <p class="etiqueta">Contacto</p>
+                    <h1 class="seccion__titulo">Cuéntanos qué necesitas construir</h1>
+                    <p>Revisamos tu proyecto y te enviamos la cotización por escrito. Si prefieres hablar directo, escríbenos por WhatsApp.</p>
+
+                    <ul class="contacto__datos">
+                        <li>
+                            <span class="contacto__dato-label">WhatsApp y teléfono</span>
+                            <a href="tel:+56933861293">+56 9 3386 1293</a>
+                        </li>
+                        <li>
+                            <span class="contacto__dato-label">Correo</span>
+                            <a href="mailto:dvalenzuela.santival@gmail.com">dvalenzuela.santival@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="contacto__dato-label">Cobertura</span>
+                            Todo Chile
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mismo formulario que la home (mismo name="contacto"): Netlify junta los envíos de ambas páginas -->
+                <form class="formulario" name="contacto" method="POST"
+                      data-netlify="true" netlify-honeypot="bot-field">
+
+                    <input type="hidden" name="form-name" value="contacto">
+
+                    <p class="formulario__oculto">
+                        <label>No llenar este campo: <input name="bot-field"></label>
+                    </p>
+
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="empresa">Empresa <span class="campo__opcional">(opcional)</span></label>
+                        <input id="empresa" name="empresa" type="text" autocomplete="organization">
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" name="email" type="email" autocomplete="email"
+                               placeholder="nombre@empresa.cl" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Teléfono</label>
+                        <input id="telefono" name="telefono" type="tel" autocomplete="tel"
+                               placeholder="+56 9 1234 5678" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="tipo">Tipo de trabajo</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option>Estructuras metálicas</option>
+                            <option>Carpintería metálica</option>
+                            <option>Obras civiles</option>
+                            <option>Mantenciones</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5"
+                                  placeholder="Qué necesitas, dónde es la obra y para cuándo" required></textarea>
+                    </div>
+
+                    <button class="boton formulario__enviar" type="submit">Enviar mensaje</button>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal de confirmación del formulario -->
+    <dialog class="modal" id="modal-envio" aria-labelledby="modal-titulo">
+        <div class="modal__contenido">
+            <div class="modal__icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h2 class="modal__titulo" id="modal-titulo">¡Gracias por escribirnos!</h2>
+            <p class="modal__texto">Recibimos tu mensaje. Revisaremos tu proyecto y te contactaremos a la brevedad.</p>
+            <form method="dialog">
+                <button class="boton modal__cerrar">Cerrar</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a class="whatsapp" href="https://wa.me/56933861293?text=Hola%2C%20quiero%20cotizar%20un%20trabajo"
+       target="_blank" rel="noopener">
+        <svg class="whatsapp__icono" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M9 8.2c.2-.4.5-.4.8-.4h.4c.2 0 .4 0 .5.4l.6 1.4c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3 0 .5.3.5.8 1.1 1.3 1.5.5.4 1 .7 1.4.9.2.1.4 0 .5-.1l.6-.7c.1-.2.3-.2.5-.1l1.4.7c.2.1.3.2.3.4 0 .5-.2 1-.6 1.3-.4.3-1 .5-1.6.4-.9-.2-2.1-.7-3.3-1.8-1.3-1.2-2-2.5-2.2-3.3-.2-.7 0-1.4.3-1.8Z" fill="currentColor"/>
+        </svg>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="contenedor footer__grid">
+
+            <div class="footer__col">
+                <p class="footer__marca">Santival</p>
+                <p>Santival SpA<br>RUT 77.710.506-K<br>Construcción de obras civiles e industriales</p>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Contacto</h2>
+                <ul class="footer__lista">
+                    <li>Diego Valenzuela</li>
+                    <li><a href="tel:+56933861293">+56 9 3386 1293</a></li>
+                    <li><a href="mailto:dvalenzuela.santival@gmail.com">dvalenzuela.santival@gmail.com</a></li>
+                    <li>Félix Contreras 3966</li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Dónde trabajamos</h2>
+                <p>Trabajamos en todo Chile</p>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__titulo">Síguenos</h2>
+                <ul class="footer__lista">
+                    <li><a href="https://www.instagram.com/santival.construcciones/">Instagram</a></li>
+                    <li><a href="https://wa.me/56933861293">WhatsApp</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="contenedor footer__legal">
+            <p>© 2026 Santival SpA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

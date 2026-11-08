@@ -1014,6 +1014,107 @@ a {
 }
 
 
+/* ---------- Aviso del formulario ---------- */
+
+.formulario__aviso {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--acero);
+}
+
+
+/* ---------- Botón secundario ---------- */
+
+.boton--secundario {
+  background: transparent;
+  color: var(--texto);
+  box-shadow: inset 0 0 0 2px var(--texto);
+}
+
+
+/* ---------- Aviso de cookies ---------- */
+/* Fijo abajo. En celular ocupa el ancho y esconde el botón de WhatsApp para no taparse;
+   en escritorio es una tarjeta abajo a la izquierda. Los dos botones tienen el mismo tamaño
+   para que rechazar sea tan fácil como aceptar. */
+
+.aviso-cookies {
+  position: fixed;
+  left: var(--espacio-3);
+  right: var(--espacio-3);
+  bottom: calc(var(--espacio-3) + env(safe-area-inset-bottom, 0px));
+  z-index: 30;
+  display: grid;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4);
+  background: var(--blanco);
+  color: var(--texto);
+  border-radius: var(--radio);
+  box-shadow: 0 12px 40px rgba(10, 33, 54, 0.3);
+}
+
+.aviso-cookies__texto {
+  margin: 0;
+  font-size: 15px;
+}
+
+.aviso-cookies__texto a {
+  color: var(--azul-santival);
+}
+
+.aviso-cookies__botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-3);
+}
+
+.aviso-cookies__botones .boton {
+  justify-content: center;
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.con-aviso-cookies .whatsapp {
+  display: none;
+}
+
+
+/* ---------- Página legal ---------- */
+
+.texto-legal {
+  max-width: 72ch;
+}
+
+.texto-legal h2 {
+  margin: var(--espacio-7) 0 var(--espacio-3);
+  font-size: var(--fs-h2);
+}
+
+.texto-legal h3 {
+  margin: var(--espacio-5) 0 var(--espacio-2);
+  font-size: var(--fs-h3);
+}
+
+.texto-legal p,
+.texto-legal ul {
+  margin: 0 0 var(--espacio-4);
+}
+
+.texto-legal li + li {
+  margin-top: var(--espacio-2);
+}
+
+.texto-legal a {
+  color: var(--azul-santival);
+}
+
+.texto-legal__fecha {
+  font-size: var(--fs-small);
+  color: var(--acero);
+}
+
+
 /* ---------- Footer ---------- */
 
 .footer {
@@ -1072,10 +1173,39 @@ a {
 }
 
 .footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-3) var(--espacio-6);
+  justify-content: space-between;
   margin-top: var(--espacio-7);
   /* Abajo deja lugar para que el botón de WhatsApp no tape el texto */
   padding-block: var(--espacio-5) 88px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-2) var(--espacio-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* "Preferencias de cookies" es un botón, pero se ve como los enlaces del footer */
+.enlace-cookies {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.enlace-cookies:hover {
+  color: var(--blanco);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 
@@ -1185,6 +1315,17 @@ a {
 
   .pagina-titulo {
     padding-block: var(--espacio-8);
+  }
+
+  .aviso-cookies {
+    left: var(--espacio-6);
+    right: auto;
+    bottom: var(--espacio-6);
+    max-width: 440px;
+  }
+
+  .con-aviso-cookies .whatsapp {
+    display: inline-flex;
   }
 
   /* Visor: foto a la izquierda, datos a la derecha */

@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
     <!-- Datos de la empresa para Google (Schema.org). GeneralContractor es un tipo de LocalBusiness.
-         TODO: agregar comuna de la dirección y horario de atención cuando el cliente los confirme. -->
+         TODO: agregar horario de atención cuando el cliente lo confirme. -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -39,7 +39,6 @@
         "taxID": "77.710.506-K",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Félix Contreras 3966",
             "addressRegion": "Región Metropolitana",
             "addressCountry": "CL"
         },
@@ -377,6 +376,7 @@
                     </div>
 
                     <button class="boton formulario__enviar" type="submit">Enviar mensaje</button>
+                    <p class="formulario__aviso">Usaremos tus datos solo para responder tu solicitud. Más información en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
                 </form>
 
             </div>
@@ -420,10 +420,8 @@
             <div class="footer__col">
                 <h2 class="footer__titulo">Contacto</h2>
                 <ul class="footer__lista">
-                    <li>Diego Valenzuela</li>
                     <li><a href="tel:+56933861293">+56 9 3386 1293</a></li>
                     <li><a href="mailto:dvalenzuela.santival@gmail.com">dvalenzuela.santival@gmail.com</a></li>
-                    <li>Félix Contreras 3966</li>
                 </ul>
             </div>
 
@@ -444,6 +442,10 @@
 
         <div class="contenedor footer__legal">
             <p>© 2026 Santival SpA. Todos los derechos reservados.</p>
+            <ul class="footer__legal-links">
+                <li><a href="privacidad.html">Política de privacidad</a></li>
+                <li><button type="button" class="enlace-cookies">Preferencias de cookies</button></li>
+            </ul>
         </div>
     </footer>
 
